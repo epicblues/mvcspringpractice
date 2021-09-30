@@ -1,20 +1,34 @@
 package com.epicblue.repositories;
 
+import java.util.Date;
+
 public class KmsVo {
-	String name;
-	long no;
-	String email;
-	public String getName() {
-		return name;
+	private long no;
+	private String name;
+	private String email;
+	private String password;
+	private Date regDate;
+	public KmsVo() {
+		System.out.println(KmsVo.class + " instance constructed by sqlSession");
 	}
-	public void setName(String name) {
-		this.name = name;
+	
+	public KmsVo(String name, String email, String password) {
+		this.email=email;
+		this.name=name;
+		this.password=password;
 	}
+	
 	public long getNo() {
 		return no;
 	}
 	public void setNo(long no) {
 		this.no = no;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
 	}
 	public String getEmail() {
 		return email;
@@ -22,15 +36,22 @@ public class KmsVo {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	
-	public KmsVo() {
-		// TODO Auto-generated constructor stub
+	public String getPassword() {
+		return password;
 	}
-	public KmsVo(String name, long no, String email) {
-		
-		this.name = name;
-		this.no = no;
-		this.email = email;
+	public void setPassword(String password) {
+		this.password = password;
+	}
+	public Date getRegDate() {
+		return regDate;
+	}
+	public void setRegDate(Date regDate) {
+		this.regDate = regDate;
+	}
+	@Override
+	public String toString() {
+		return "KmsVo [no=" + no + ", name=" + name + ", email=" + email + ", password=" + password + ", regDate="
+				+ regDate + "]";
 	}
 	
 	

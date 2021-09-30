@@ -6,9 +6,10 @@
 
 <configuration>
 	<typeAliases>
+		<typeAlias alias="kmsVo" type="com.epicblue.repositories.KmsVo"/>
 	</typeAliases>
-	
+
 	<mappers>
-	
+		<mapper resource="mybatis/mappers/user.xml" />
 	</mappers>
 </configuration>

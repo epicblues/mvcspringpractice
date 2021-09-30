@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- mybatis mapper 설정 -->
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+	
+
+<mapper namespace="user">
+	<insert id="join" parameterType="kmsVo">
+		insert into springtest(no,name,email,password)
+		values(springtest_seq_val.nextval, #{name}, #{email}, #{password})
+	</insert>
+	<select id="login" parameterType="map" resultType="kmsVo">
+		select * from springtest where email=#{email} and password=#{password}
+	</select>
+</mapper>
