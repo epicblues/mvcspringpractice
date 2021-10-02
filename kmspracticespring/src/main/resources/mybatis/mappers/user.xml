@@ -12,4 +12,7 @@
 	<select id="login" parameterType="map" resultType="kmsVo">
 		select * from springtest where email=#{email} and password=#{password}
 	</select>
+	<select id="checkemail" parameterType="string" resultType="kmsVo">
+		select * from springtest where email=#{email}
+	</select>
 </mapper>

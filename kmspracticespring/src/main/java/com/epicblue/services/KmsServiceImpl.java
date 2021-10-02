@@ -14,6 +14,7 @@ public class KmsServiceImpl implements KmsService {
 	
 	@Override
 	public int join(KmsVo vo) {
+		
 		int resultNum = kmsDaoImpl.join(vo);
 		return resultNum;
 	}
@@ -21,6 +22,12 @@ public class KmsServiceImpl implements KmsService {
 	@Override
 	public KmsVo login(String email, String password) {
 		KmsVo vo = kmsDaoImpl.login(email, password);
+		return vo;
+	}
+
+	@Override
+	public KmsVo checkemail(String email) {
+		KmsVo vo = kmsDaoImpl.checkEmail(email);
 		return vo;
 	}
 

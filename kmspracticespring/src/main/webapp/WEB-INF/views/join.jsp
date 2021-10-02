@@ -16,7 +16,8 @@
 		<h1> 회원 가입하러 오셨습니까?</h1>
 		<form action="<c:url value="/join"/>" method="POST">
 		<input type="text" name="name" placeholder="name"/>
-		<input type="text" name="email" placeholder="email"/>
+		<input type="text" name="email" placeholder="email"/> 
+		<button>중복체크</button>
 		<input type="password" name="password" placeholder="password"/>
 		<button>Submit!</button>
 	</form>
@@ -38,6 +39,19 @@
 	<script>
 		document.querySelectorAll("input").forEach(input => {
 			input.style.display="block";
+		})
+		document.querySelector("button").addEventListener("click", (e) => {
+			e.preventDefault();
+			fetch("/kmspracticespring/api/checkemail", {
+				headers : {
+					"Content-Type": "application/json; charset=UTF-8"
+				},
+				body : JSON.stringify({"email": e.target.form.email.value}),
+				method : "POST"
+			})
+			.then(resp => resp.json())
+			.then(console.log)
+			.catch(console.error)	
 		})
 		
 	</script>

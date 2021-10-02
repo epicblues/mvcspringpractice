@@ -13,7 +13,7 @@
 	destroy-method="close">
 		<property name="URL" value ="jdbc:oracle:thin:@localhost:1521:xe" />
 		<property name="user" value="c##kmsbabo"></property>
-		<property name="password" value="1234"></property>
+		<property name="password" value="kmsbabo"></property>
 		<property name="connectionCachingEnabled" value="true"></property>
 		<qualifier value="main-db"></qualifier>
 		<!-- 그 외에 다양한 autowired property에 세팅할 수 있는 특정 객체를 지정
